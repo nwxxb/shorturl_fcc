@@ -1,0 +1,15 @@
+version: '3.8'
+
+services: 
+  app:
+    build: .
+    container_name: shorturl_fcc
+    command: npm run dev
+    # command: npm run start
+    ports:
+      - 3000:${PORT}
+    env_file:
+      - .env
+    volumes:
+      - .:/code
+      - /code/node_modules
